@@ -10,9 +10,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="游客"
+            android:textSize="40sp"
+            android:layout_gravity="right"
+            android:background="#00ffff"
+            android:layout_marginTop="5px"
+            android:layout_marginRight="5px"
+            android:id="@+id/tv_islogin"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,19 +60,19 @@
                 android:layout_width="80dp"
                 android:layout_height="50dp"
                 android:text="登陆"
-                android:background="@drawable/bt_res"
+                style="@style/ownColorbyZD"
                 android:id="@+id/bt_login"
                 android:onClick="login_listener"/>
             <Button
+                style="@style/ownColorbyZD"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="100dp"
                 android:text="注册"
-                android:background="@drawable/bt_res"
                 android:id="@+id/bt_regiest"
                 android:onClick="login_listener"/>
 
         </LinearLayout>
     </LinearLayout>
-
+    </LinearLayout>
 </LinearLayout>
