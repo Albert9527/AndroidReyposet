@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ImsgDemoActivity"></activity>
+        <activity android:name=".RecyclerViewDemoPlus" />
+        <activity android:name=".RecyclerViewActivity" />
+        <activity
+            android:name=".QQsetupPage"
+            android:label="设置" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

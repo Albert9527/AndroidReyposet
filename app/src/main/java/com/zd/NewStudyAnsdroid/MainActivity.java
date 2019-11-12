@@ -1,11 +1,12 @@
 package com.zd.NewStudyAnsdroid;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private EditText editTextu,editTextp;
@@ -26,12 +27,12 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()){
         case R.id.bt_login:
             if (editTextu.getText()!=null&&editTextp.getText()!=null)
-            Toast.makeText(this,editTextu.getText().toString()+"已登录",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(view.getContext(),QQsetupPage.class));
             else
                 Toast.makeText(this,"请输入用户名或者密码！",Toast.LENGTH_LONG).show();
             break;
         case R.id.bt_regiest:
-            Toast.makeText(this,"该功能还在开发中！",Toast.LENGTH_LONG).show();
+            startActivity(new Intent(view.getContext(),ImsgDemoActivity.class));
             break;
         }
 
