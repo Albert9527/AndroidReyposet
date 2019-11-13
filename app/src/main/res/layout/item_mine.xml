@@ -7,10 +7,11 @@
     android:gravity="center_horizontal"
     android:layout_marginTop="5dp">
     <TextView
-            android:layout_width="200dp"
-            android:layout_height="20dp"
-            android:text="下午 05:08"
-            android:gravity="center"
+        android:id="@+id/time_mine"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:text="下午 05:08"
+        android:gravity="center"
         android:layout_marginBottom="5dp"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,6 +27,7 @@
             android:textSize="15sp"
             android:layout_marginLeft="80dp"
             android:singleLine="false"
+            android:gravity="right"
             android:padding="10dp"/>
         <ImageView
             android:id="@+id/img_mine"

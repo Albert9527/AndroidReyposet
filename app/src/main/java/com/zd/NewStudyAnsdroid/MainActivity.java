@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this,"请输入用户名或者密码！",Toast.LENGTH_LONG).show();
             break;
         case R.id.bt_regiest:
-            startActivity(new Intent(view.getContext(),ImsgDemoActivity.class));
+            startActivity(new Intent(view.getContext(),RecyclerViewDemoPlus.class));
             break;
         }
 

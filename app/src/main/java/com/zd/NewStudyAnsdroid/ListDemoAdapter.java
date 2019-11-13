@@ -11,9 +11,14 @@ import java.util.List;
 
 public class ListDemoAdapter extends RecyclerView.Adapter<ListDemoAdapter.ListViewHolder>{
     private List<Entity> data;
+    private RecyclerViewActivity.OnItemClickListener listener;
 
     public ListDemoAdapter(List<Entity> data){
         this.data = data;
+    }
+    public void setOnItemClickListener
+            (RecyclerViewActivity.OnItemClickListener listener){
+        this.listener = listener;
     }
 
     public void setData(List<Entity> data) {
@@ -39,10 +44,18 @@ public class ListDemoAdapter extends RecyclerView.Adapter<ListDemoAdapter.ListVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ListViewHolder holder, final int position) {
 
         Entity entity = data.get(position);
         holder.textView.setText(entity.getMsg());
+        holder.textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null){
+                    listener.itemClick(position,v);
+                }
+            }
+        });
     }
 
     @Override
@@ -57,6 +70,7 @@ public class ListDemoAdapter extends RecyclerView.Adapter<ListDemoAdapter.ListVi
             //获取itemUi
             super(itemView);
             textView = itemView.findViewById(R.id.tv_text);
+
         }
     }
 }

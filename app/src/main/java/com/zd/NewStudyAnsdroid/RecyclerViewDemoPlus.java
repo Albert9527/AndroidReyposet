@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,6 +46,13 @@ public class RecyclerViewDemoPlus extends AppCompatActivity {
                 Toast.makeText(context,position+"》》》被点击",Toast.LENGTH_LONG).show();
             }
         });
+
+        DividerItemDecoration itemDecoration = new DividerItemDecoration
+                (context,DividerItemDecoration.VERTICAL);
+        itemDecoration.setDrawable(getResources().getDrawable(R.drawable.item_divider));
+
+        recyclerView.addItemDecoration(itemDecoration);
+
         recyclerView.setAdapter(adapter);
         initData();
 

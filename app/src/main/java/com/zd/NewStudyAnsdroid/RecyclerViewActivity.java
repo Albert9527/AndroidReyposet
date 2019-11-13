@@ -1,6 +1,9 @@
 package com.zd.NewStudyAnsdroid;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,6 +32,14 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         //设置适配器
         adapter = new ListDemoAdapter(null);
+
+       OnItemClickListener listener = new OnItemClickListener(){
+           @Override
+           public void itemClick(int position, View view) {
+               Toast.makeText(view.getContext(),position+"被点击",Toast.LENGTH_LONG).show();
+            }
+       };
+       adapter.setOnItemClickListener(listener);
         recyclerView.setAdapter(adapter);
         initData();
     }
@@ -42,5 +53,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
         }
 
         adapter.setData(data);
+    }
+
+    public static interface OnItemClickListener{
+        void itemClick(int position, View view);
     }
 }
